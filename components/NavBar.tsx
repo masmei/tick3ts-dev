@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-function NavBar() {
+const NavBar = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <div>

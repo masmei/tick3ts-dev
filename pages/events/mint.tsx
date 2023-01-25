@@ -11,7 +11,7 @@ const signatureDropAddress = "0x7Fbab16673E9dbB44d9FC7C6211687806887b66B";
 
 const Mint: NextPage = () => {
   const address = useAddress();
-
+  console.log(address)
   const { contract: signatureDrop } = useContract(
     signatureDropAddress,
     "signature-drop"

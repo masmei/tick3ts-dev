@@ -4,7 +4,7 @@
 
 /* Body */
 body {
-  background-color: #ffd1e0;
+  background: linear-gradient(to right, #ffff, #ffd1e0);
   color: #333;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
