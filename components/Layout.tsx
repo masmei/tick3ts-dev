@@ -17,7 +17,7 @@ export const Layout = ({ children }: Props) => {
       </Head>
       <NavBar/>
       <main className="flex-1">{children}</main>
-      <footer className="bg-white p-6 text-center">
+      <footer className="p-6 text-center">
         <p className="text-gray-500">Copyright &copy; 2023 Tick3ts</p>
       </footer>
     </div>

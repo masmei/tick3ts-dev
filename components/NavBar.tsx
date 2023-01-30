@@ -1,18 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useMetamask, useAddress } from "@thirdweb-dev/react";
 
 const NavBar = () => {
   const [navbar, setNavbar] = useState(false);
+  const address = useAddress();
+  const connectWithMetamask = useMetamask();
+
   return (
     <div>
-      <nav className="bg-white w-full top-0 left-0 right-0 z-10">
+      <nav className="w-full top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link className="text-3xl font-bold" href="/">
-                Tick3ts
+                <Image 
+                src="/logo1.png"
+                width={100}
+                height={30}
+                alt="tick3ts-logo"
+                />
               </Link>
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className="md:hidden">
@@ -47,25 +56,28 @@ const NavBar = () => {
               }`}
             >
               <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-                <li className="text-xl font-bold py-2 md:px-6 text-center  hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
-                  <Link className="text-black" href="/events" onClick={() => setNavbar(!navbar)}>
+                <li className="text-l font-bold py-2 md:px-6 text-center  hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
+                  <Link href="/events" onClick={() => setNavbar(!navbar)}>
                     Events
                   </Link>
                 </li>
-                <li className="text-xl font-bold py-2 px-6 text-center   hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
-                  <Link className="text-black" href="/marketplace" onClick={() => setNavbar(!navbar)}>
+                <li className="text-l font-bold py-2 px-6 text-center   hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
+                  <Link href="/marketplace" onClick={() => setNavbar(!navbar)}>
                     Marketplace
                   </Link>
                 </li>
-                <li className="text-xl font-bold py-2 px-6 text-center   hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
-                  <Link className="text-black" href="/verify" onClick={() => setNavbar(!navbar)}>
+                <li className="text-l font-bold py-2 px-6 text-center   hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
+                  <Link href="/verify" onClick={() => setNavbar(!navbar)}>
                     Check In
                   </Link>
                 </li>
-                <li className=" text-xl font-bold py-2 px-6 text-center   hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
-                  <Link className="text-black" href="#projects" onClick={() => setNavbar(!navbar)}>
-                    Profile
-                  </Link>
+                <li className="flex align-middle justify-center">
+                    {address && (<button className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-2 px-4 rounded-tr-lg rounded-bl-lg border-2 border-pink-600" onClick={connectWithMetamask}>
+                      {address.slice(0, 3) + "..." + address.slice(39, 42)}
+                    </button>)}
+                    {!address && (<button className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-2 px-4 rounded-tr-lg rounded-bl-lg border-2 border-pink-600" onClick={connectWithMetamask}>
+                      Connect Wallet
+                    </button>)}
                 </li>
               </ul>
             </div>
@@ -74,6 +86,6 @@ const NavBar = () => {
       </nav>
     </div>
   );
-}
+};
 
 export default NavBar;

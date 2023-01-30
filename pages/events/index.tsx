@@ -15,7 +15,7 @@ const Events: NextPage = () => {
     {
       id: 1,
       title: 'Code and Pizza',
-      date: '12-31-2022',
+      date: '1-26-2023',
       location: 'New York City, NY',
       image: 'https://media.gettyimages.com/id/599766748/photo/the-city-of-dreams-new-york-citys-skyline-at-twilight.jpg?s=612x612&w=gi&k=20&c=Y_31EZsuzF6wCngJXiKd7o6DRTxofRGQMzBcmSvb_4I='
     },
