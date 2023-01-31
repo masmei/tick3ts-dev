@@ -56,26 +56,26 @@ const NavBar = () => {
               }`}
             >
               <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-                <li className="text-l font-bold py-2 md:px-6 text-center  hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
+                <li className="text-l font-bold py-2 md:px-6 text-center">
                   <Link href="/events" onClick={() => setNavbar(!navbar)}>
                     Events
                   </Link>
                 </li>
-                <li className="text-l font-bold py-2 px-6 text-center   hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
+                <li className="text-l font-bold py-2 px-6 text-center ">
                   <Link href="/marketplace" onClick={() => setNavbar(!navbar)}>
                     Marketplace
                   </Link>
                 </li>
-                <li className="text-l font-bold py-2 px-6 text-center   hover:bg-pink-200  border-pink-500  md:hover:bg-transparent">
+                <li className="text-l font-bold py-2 px-6 text-center ">
                   <Link href="/verify" onClick={() => setNavbar(!navbar)}>
                     Check In
                   </Link>
                 </li>
-                <li className="flex align-middle justify-center">
-                    {address && (<button className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-2 px-4 rounded-tr-lg rounded-bl-lg border-2 border-pink-600" onClick={connectWithMetamask}>
+                <li className="flex align-middle justify-center ml-4">
+                    {address && (<button className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-2 px-4 rounded-tr-lg rounded-bl-lg border-2 border-red-500" onClick={connectWithMetamask}>
                       {address.slice(0, 3) + "..." + address.slice(39, 42)}
                     </button>)}
-                    {!address && (<button className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-2 px-4 rounded-tr-lg rounded-bl-lg border-2 border-pink-600" onClick={connectWithMetamask}>
+                    {!address && (<button className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-2 px-4 rounded-tr-lg rounded-bl-lg border-2 border-red-500" onClick={connectWithMetamask}>
                       Connect Wallet
                     </button>)}
                 </li>

@@ -6,7 +6,7 @@ const Home: NextPage = () => {
     <div className="container mx-auto p-6 mt-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <section className="flex flex-col justify-center items-center text-center">
-          <h2 className="text-white text-5xl font-medium mt-6 mb-6">Discover & Mint NFTs for Your Favorite Events</h2>
+          <h2 className="text-5xl font-medium mt-6 mb-6">Discover & Mint NFTs for Your Favorite Events</h2>
           <p className="text-gray-300">Your tick3ts are more than just an admission. Experience the art and collectible nature of NFTs as your tick3ts become a lasting memorabilia.</p>
           <div className="mt-8">
             <Link href="/events">
