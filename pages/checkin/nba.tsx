@@ -8,16 +8,20 @@ import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import type { NextPage } from "next";
 import { checkIsManualRevalidate } from "next/dist/server/api-utils";
 
-const signatureDropAddress = "0x7Fbab16673E9dbB44d9FC7C6211687806887b66B";
+const signatureDropAddress = "0x07796cfbD562fa4b697D92bbCE002BCB08D2aA64";
 
 const Pursuit: NextPage = () => {
-  const address:any = useAddress();
+  const address: any = useAddress();
 
   //Ensure we are able to generate an auth token using our private key instantiated SDK
-  const PRIVATE_KEY:any = process.env.PRIVATE_KEY as any;
-
+  console.log(process.env);
+  // const PRIVATE_KEY: any = process.env.PRIVATE_KEY as any;
+  // console.log(PRIVATE_KEY);
   //Instantiate our SDK
-  const sdk = ThirdwebSDK.fromPrivateKey("0a1b4822458052eccee1a62cb94ecb9c57a00dfee5da96c58c0b60f82c5fb9ba", "goerli");
+  const sdk = ThirdwebSDK.fromPrivateKey(
+    "0a1b4822458052eccee1a62cb94ecb9c57a00dfee5da96c58c0b60f82c5fb9ba",
+    "goerli"
+  );
   // const sdk = ThirdwebSDK.fromPrivateKey(PRIVATE_KEY, "goerli");
 
   const domain = "tick3ts.io";
@@ -27,7 +31,7 @@ const Pursuit: NextPage = () => {
       signatureDropAddress,
       "signature-drop"
     );
-    console.log(nftCollection)
+    console.log(nftCollection);
 
     //replace this with your contract address
     const balance = await nftCollection.balanceOf(address, 0);
@@ -43,7 +47,7 @@ const Pursuit: NextPage = () => {
     if (!hasNft) {
       alert("NFT Not Found");
     } else {
-      alert("You are all set!")
+      alert("You are all set!");
     }
   };
 
@@ -54,16 +58,23 @@ const Pursuit: NextPage = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <main className="flex flex-col items-center">
+      <main className="flex flex-col pt-10 items-center">
+        <div className="flex justify-center">
+          <img
+            className="rounded-xl"
+            src={"/nba.png"}
+            width={300}
+            alt="event-image"
+          />
+        </div>
         <h1 className="text-3xl font-medium text-center mt-6 mb-6">
-          Check in for: <a href="http://thirdweb.com/">Code & Pizza</a>!
+          Check in for: <a href="/events/nba">NBA All-Star Game</a>!
         </h1>
-        <ConnectWallet className="mt-6 mb-6" />
         <Web3Button
           contractAddress={signatureDropAddress}
           action={() => checkIn()}
-          colorMode="light"
-          className="bg-pink-500 text-white p-4 rounded-lg hover:bg-pink-600"
+          colorMode="dark"
+          accentColor="#6617CB"
         >
           Check in
         </Web3Button>

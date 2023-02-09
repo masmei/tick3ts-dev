@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import NavBar from "./NavBar";
 
 type Props = {
@@ -13,7 +12,7 @@ export const Layout = ({ children }: Props) => {
       <Head>
         <title>Tick3ts</title>
         <meta name="description" content="Events Website" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='shortcut icon' href='/favicon.ico'/>
       </Head>
       <NavBar/>
       <main className="flex-1">{children}</main>

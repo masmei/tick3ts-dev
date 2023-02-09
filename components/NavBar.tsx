@@ -61,20 +61,20 @@ const NavBar = () => {
                     Events
                   </Link>
                 </li>
-                <li className="text-l font-bold py-2 px-6 text-center ">
+                {/* <li className="text-l font-bold py-2 px-6 text-center ">
                   <Link href="/marketplace" onClick={() => setNavbar(!navbar)}>
                     Marketplace
                   </Link>
-                </li>
+                </li> */}
                 <li className="text-l font-bold py-2 px-6 text-center ">
-                  <Link href="/verify" onClick={() => setNavbar(!navbar)}>
+                  <Link href="/checkin/nba" onClick={() => setNavbar(!navbar)}>
                     Check In
                   </Link>
                 </li>
                 <li className="flex align-middle justify-center ml-4">
-                    {address && (<button className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-2 px-4 rounded-tr-lg rounded-bl-lg border-2 border-red-500" onClick={connectWithMetamask}>
+                    {address && ( <Link href="/profile" onClick={() => setNavbar(!navbar)}><button className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-2 px-4 rounded-tr-lg rounded-bl-lg border-2 border-red-500" onClick={connectWithMetamask}>
                       {address.slice(0, 3) + "..." + address.slice(39, 42)}
-                    </button>)}
+                    </button></Link>)}
                     {!address && (<button className="bg-gradient-to-r from-gray-700 to-gray-800 text-white py-2 px-4 rounded-tr-lg rounded-bl-lg border-2 border-red-500" onClick={connectWithMetamask}>
                       Connect Wallet
                     </button>)}

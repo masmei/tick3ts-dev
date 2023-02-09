@@ -3,6 +3,7 @@ import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import "../styles/globals.css";
 import { Layout } from "../components/Layout";
 import { Roboto } from "@next/font/google";
+import Head from "next/head";
 
 // This is the chainId your dApp will work on.
 const activeChainId = ChainId.Goerli;

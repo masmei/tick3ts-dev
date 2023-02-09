@@ -8,6 +8,7 @@ import {
   } from "@thirdweb-dev/react";
   import { SignedPayload721WithQuantitySignature } from "@thirdweb-dev/sdk";
   import type { NextPage } from "next";
+  import Image from "next/image";
   
   const signatureDropAddress = "0x27019600bd6E58E57F2ABc6A885d018B7aBCe5Bb";
   
@@ -39,6 +40,12 @@ import {
         </header> */}
         <main className="grid gap-6 rounded-md bg-black/20 p-6 md:grid-cols-2 md:p-12">
           <div className="flex flex-col items-center justify-center space-y-6">
+          <Image 
+                src="/logo.png"
+                width={50}
+                height={50}
+                alt="tick3ts-logo"
+                />
             <h1 className="text-2xl font-bold text-secondary">
             {contractMetadata?.name}
             </h1>

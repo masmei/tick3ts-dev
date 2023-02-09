@@ -15,20 +15,21 @@ const Events: NextPage = () => {
   const [events, setEvents] = useState<Event[]>([
     {
       id: 1,
-      title: "NBA All-Star Game 2023",
-      date: "Feb 19, 2023",
-      location: "Salt Lake City, UT",
-      image: "/nba.png",
-      link: "/events/nba",
-    },
-    {
-      id: 2,
       title: "NFL Pro Bowl 2023",
       date: "February 2, 2023",
       location: "Las Vegas, NV",
       image: "/nfl.png",
       link: "/events/nfl",
     },
+    {
+      id: 2,
+      title: "NBA All-Star Game 2023",
+      date: "Feb 19, 2023",
+      location: "Salt Lake City, UT",
+      image: "/nba.png",
+      link: "/events/nba",
+    },
+    
   ]);
 
   return (
